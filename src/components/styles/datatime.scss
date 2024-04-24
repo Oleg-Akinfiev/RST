@@ -1,0 +1,24 @@
+.datetime {
+  display: flex;
+  align-items: center;
+}
+
+.datetime__calendar {
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+.datetime__day-of-week {
+  font-style: italic;
+  color: $dark_grey;
+}
+
+.datetime__time {
+  display: flex;
+  justify-content: center;
+  border: 1px solid $light_grey;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 20px;
+  width: 150px;
+}
