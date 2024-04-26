@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { daysOfWeek, months } from "../utils/constants";
 
 const DataTime = () => {
@@ -15,9 +16,7 @@ const DataTime = () => {
   const month = months[time.getMonth()];
   const day = time.getDate();
   const year = time.getFullYear();
-  const hours = time.getHours();
-  const minutes = time.getMinutes();
-  const seconds = time.getSeconds();
+  const watch = time.toLocaleTimeString();
 
   return (
     <div className="datetime">
@@ -27,9 +26,7 @@ const DataTime = () => {
         </div>
         <div className="datetime__day-of-week">{dayOfWeek}</div>
       </div>
-      <div className="datetime__time">
-        {hours} : {minutes} : {seconds}
-      </div>
+      <div className="datetime__watch">{watch}</div>
     </div>
   );
 };
