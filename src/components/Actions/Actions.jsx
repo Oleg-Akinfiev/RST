@@ -11,7 +11,9 @@ const Actions = () => {
       <div className="action__block">
         <ActionBtn />
       </div>
-      <div className="action__block">{/* <ActionSearch /> */}</div>
+      <div className="action__block">
+        <ActionSearch />
+      </div>
 
       {/* <div className="search">
         <input type="text" placeholder="Поиск" />
