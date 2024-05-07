@@ -1,22 +1,31 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { navbarLink } from "../utils/constants";
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+
+  const links = navbarLink.map((item) => (
+    <Link className="nav__link" key={item.title}>
+      <p onClick={() => setOpen(!open)}>{item.title}</p>
+      {open && (
+        <div className="nav__blocks">
+          <div className="nav__block">{item.subtitle}</div>
+        </div>
+      )}
+    </Link>
+  ));
 
   return (
     <nav>
       <div className="container">
         <div className="nav">
-          <Link to="/RST" className="nav__link">
+          {links}
+          {/* <Link className="nav__link">
             <p onClick={() => setOpen(!open)}>О нас</p>
             {open && (
-              <div
-                className="nav__blocks"
-                in={!open}
-                timeout={300}
-                unmountOnExit
-              >
+              <div className="nav__blocks">
                 <div className="nav__block">
                   <h1>О нас</h1>
                   <Link to="/">Миссия, видение, ценности</Link>
@@ -64,30 +73,7 @@ const Navbar = () => {
               </div>
             )}
           </Link>
-          <Link to="/" className="nav__link">
-            <p>Ресурсы</p>
-          </Link>
-          <Link to="/" className="nav__link">
-            <p>Услуги</p>
-          </Link>
-          <Link to="/" className="nav__link">
-            <p>Обучение</p>
-          </Link>
-          <Link to="/" className="nav__link">
-            <p>Заключения</p>
-          </Link>
-          <Link to="/" className="nav__link">
-            <p>Сертификация и испытания</p>
-          </Link>
-          <Link to="/" className="nav__link">
-            <p>Пресс-центр</p>
-          </Link>
-          <Link to="/" className="nav__link">
-            <p>Контакты</p>
-          </Link>
-          <Link to="/" className="nav__link">
-            <p>Обратная связь</p>
-          </Link>
+          */}
         </div>
       </div>
     </nav>

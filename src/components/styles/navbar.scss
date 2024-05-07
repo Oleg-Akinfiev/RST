@@ -9,10 +9,10 @@ nav {
 }
 
 .nav__link {
-  p {
-    font-size: 18px;
-  }
-  &:hover p {
+  font-size: 18px;
+  // p {
+  // }
+  &:hover {
     color: $red;
     font-weight: 700;
   }
@@ -22,9 +22,8 @@ nav {
   display: flex;
   position: absolute;
   background-color: $light_grey;
-  max-width: 1260px;
+  //max-width: 1260px;
   width: 100%;
-  transform: 2s;
 }
 
 .nav__block {
